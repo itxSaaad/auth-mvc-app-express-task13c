@@ -1,3 +1,5 @@
+import { StatusCodes } from 'http-status-codes';
+
 class CustomAPIError extends Error {
   constructor(message, statusCode) {
     super(message);
@@ -8,6 +10,20 @@ class CustomAPIError extends Error {
 const createCustomError = (msg, statusCode) => {
   return new CustomAPIError(msg, statusCode);
 };
+
+class BadRequest extends CustomAPIError {
+  constructor(message) {
+    super(message);
+    this.statusCode = StatusCodes.BAD_REQUEST;
+  }
+}
+
+class UnauthenticatedError extends CustomAPIError {
+  constructor(message) {
+    super(message);
+    this.statusCode = StatusCodes.UNAUTHORIZED;
+  }
+}
 
 const errorHandler = (err, req, res, next) => {
   if (err instanceof CustomAPIError) {
@@ -24,4 +40,10 @@ const notFoundHandler = (req, res) => {
   res.status(404).json({ message });
 };
 
-export { createCustomError, errorHandler, notFoundHandler };
+export {
+  createCustomError,
+  BadRequest,
+  UnauthenticatedError,
+  errorHandler,
+  notFoundHandler,
+};
