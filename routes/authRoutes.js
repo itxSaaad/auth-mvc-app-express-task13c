@@ -1,13 +1,12 @@
 import { Router } from 'express';
 
+import { login, dashboard } from '../controllers/authController.js';
+
+import { authMiddleware } from '../middlewares/authMiddleware.js';
+
 const router = Router();
 
-router.get('/login', (req, res) => {
-  res.send('Login Route');
-});
-
-router.get('/register', (req, res) => {
-  res.send('Register Route');
-});
+router.post('/login', login);
+router.get('/dashboard', authMiddleware, dashboard);
 
 export default router;
