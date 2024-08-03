@@ -1,0 +1,31 @@
+{
+  "name": "auth-mvc-app-express-task13c",
+  "version": "1.0.0",
+  "description": "auth-mvc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itxSaaad/auth-mvc-app-express-task13c.git"
+  },
+  "author": "Muhammad Saad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itxSaaad/auth-mvc-app-express-task13c/issues"
+  },
+  "homepage": "https://github.com/itxSaaad/auth-mvc-app-express-task13c#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
+    "http-status-codes": "^2.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
